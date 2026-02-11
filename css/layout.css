@@ -56,6 +56,7 @@
     z-index: 10;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .main-wrapper {
         grid-template-columns: 1fr;
@@ -63,6 +64,24 @@
 
     .sidebar {
         display: none;
-        /* For now, until mobile menu is implemented */
+        /* Hide sidebar on mobile */
+    }
+
+    .content-area {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .top-header {
+        padding: 1rem;
+    }
+
+    .content-area {
+        padding: 1rem;
     }
 }
