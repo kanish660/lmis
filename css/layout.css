@@ -56,6 +56,18 @@
     z-index: 10;
 }
 
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+}
+
+/* Table responsiveness */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .main-wrapper {
@@ -64,11 +76,15 @@
 
     .sidebar {
         display: none;
-        /* Hide sidebar on mobile */
     }
 
     .content-area {
         padding: 1.5rem;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        font-size: 1.5rem;
     }
 }
 
