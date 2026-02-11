@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses | University LMS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.875rem 1rem;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link.active {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        .nav-link:hover:not(.active) {
+            background-color: #f1f5f9;
+            color: var(--text-primary);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            background: #e2e8f0;
+        }
+
+        .course-progress {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin: 1rem 0 0.5rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <div
+                style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 2.5rem; padding-left: 1rem;">
+                UniLMS
+            </div>
+            <nav>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="courses.html" class="nav-link active">My Courses</a>
+                <a href="assignments.html" class="nav-link">Assignments</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                <a href="index.html" class="nav-link" style="color: var(--danger);">Logout</a>
+            </div>
+        </aside>
+
+        <main style="display: flex; flex-direction: column;">
+            <header class="top-header">
+                <div style="font-weight: 600; font-size: 1.125rem;">My Courses</div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="btn" style="padding: 0.5rem;">🔔</button>
+                    <div style="width: 32px; height: 32px; background: #e2e8f0; border-radius: 50%;"></div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="flex-between" style="margin-bottom: 2rem;">
+                    <h2>Active Courses</h2>
+                    <div class="input-group" style="margin-bottom: 0; width: 300px;">
+                        <input type="text" class="input-control" placeholder="Search courses...">
+                    </div>
+                </div>
+
+                <div class="grid-layout">
+                    <div class="card course-card">
+                        <div
+                            style="height: 160px; background: #3b82f6; border-radius: var(--radius-md); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            CS
+                        </div>
+                        <h3>Computer Science 101</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Dr. Alan Turing</p>
+                        <div class="course-progress">
+                            <div class="progress-bar" style="width: 75%;"></div>
+                        </div>
+                        <div class="flex-between" style="font-size: 0.75rem; color: var(--text-secondary);">
+                            <span>75% Complete</span>
+                            <span>12/16 Lessons</span>
+                        </div>
+                        <a href="course-detail.html" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1.5rem; justify-content: center;">Continue</a>
+                    </div>
+
+                    <div class="card course-card">
+                        <div
+                            style="height: 160px; background: #ec4899; border-radius: var(--radius-md); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            UX
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Prof. Jane Doe</p>
+                        <div class="course-progress">
+                            <div class="progress-bar" style="width: 40%;"></div>
+                        </div>
+                        <div class="flex-between" style="font-size: 0.75rem; color: var(--text-secondary);">
+                            <span>40% Complete</span>
+                            <span>8/20 Lessons</span>
+                        </div>
+                        <a href="course-detail.html" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1.5rem; justify-content: center;">Continue</a>
+                    </div>
+
+                    <div class="card course-card">
+                        <div
+                            style="height: 160px; background: #10b981; border-radius: var(--radius-md); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            DB
+                        </div>
+                        <h3>Database Systems</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Dr. E.F. Codd</p>
+                        <div class="course-progress">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                        <div class="flex-between" style="font-size: 0.75rem; color: var(--text-secondary);">
+                            <span>90% Complete</span>
+                            <span>18/20 Lessons</span>
+                        </div>
+                        <a href="course-detail.html" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1.5rem; justify-content: center;">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

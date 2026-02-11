@@ -18,6 +18,7 @@
 
 .grid-layout {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -27,8 +28,41 @@
     min-height: 100vh;
 }
 
+.sidebar {
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.top-header {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 @media (max-width: 1024px) {
     .main-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+        /* For now, until mobile menu is implemented */
     }
 }
