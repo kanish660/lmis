@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,57 +11,79 @@
     <style>
         .login-page {
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
         }
+
         .login-card {
             width: 100%;
             max-width: 400px;
             padding: 2.5rem;
+            animation: fadeIn 0.6s ease-out;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .login-header {
             text-align: center;
             margin-bottom: 2rem;
         }
+
         .login-header h1 {
             font-size: 1.75rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
+
         .login-header p {
             color: var(--text-secondary);
         }
     </style>
 </head>
+
 <body>
-    <div class="login-page">
-        <div class="card login-card glass-effect">
-            <div class="login-header">
+    <main class="login-page">
+        <section class="card login-card glass-effect">
+            <header class="login-header">
                 <h1>University LMS</h1>
                 <p>Sign in to your account</p>
-            </div>
-            <form action="dashboard.html">
+            </header>
+            <form action="dashboard.html" method="GET">
                 <div class="input-group">
-                    <label class="input-label">Student ID / Email</label>
-                    <input type="text" class="input-control" placeholder="Enter your ID" required>
+                    <label class="input-label" for="student-id">Student ID / Email</label>
+                    <input type="text" id="student-id" name="student-id" class="input-control"
+                        placeholder="Enter your ID" aria-required="true" required>
                 </div>
                 <div class="input-group">
-                    <label class="input-label">Password</label>
-                    <input type="password" class="input-control" placeholder="••••••••" required>
+                    <label class="input-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="input-control" placeholder="••••••••"
+                        aria-required="true" required>
                 </div>
                 <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; font-size: 0.875rem;">
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox"> Remember me
+                        <input type="checkbox" name="remember"> Remember me
                     </label>
                     <a href="#" style="color: var(--primary-color);">Forgot password?</a>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Sign In</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Sign
+                    In</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
+
 </html>
